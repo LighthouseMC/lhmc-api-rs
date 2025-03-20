@@ -50,6 +50,18 @@ pub fn event(attr : TokenStream, item : TokenStream) -> TokenStream {
     let add_item = match (event_name_string.as_str()) {
 
 
+        "plot_start" => {
+            quote!{ #[unsafe(no_mangle)] pub unsafe fn _vx_on_plot_start() -> () {
+                $function_name()
+            } }
+        },
+        "plot_stop" => {
+            quote!{ #[unsafe(no_mangle)] pub unsafe fn _vx_on_plot_stop() -> () {
+                $function_name()
+            } }
+        },
+
+
         "player_join" => {
             let player = Ident::new("player", event_name.span());
             quote!{ #[unsafe(no_mangle)] pub unsafe fn _vx_on_player_join(session_id : u64) -> () {
