@@ -18,9 +18,10 @@ pub use lhmc_api_rs_macro as macros;
 
 
 pub mod prelude {
-    pub use lhmc_api_rs_macro::*;
     pub use crate::system::sleep;
     pub use crate::plot::Plot;
     pub use crate::player::Player;
     pub use crate::util::sanitise_text;
+    pub use crate::data::SoundCat;
+    pub use lhmc_api_rs_macro::*;
 }
