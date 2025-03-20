@@ -1,0 +1,24 @@
+[package]
+name        = "lhmc-api-rs"
+version     = "0.1.0"
+authors     = ["LighthouseMC <https://github.com/LighthouseMC>"]
+description = "Rust API for the Lighthouse Minecraft server."
+license     = "LGPL-3.0"
+
+homepage   = "https://github.com/LighthouseMC"
+repository = "https://github.com/LighthouseMC/lhmc-api-rs"
+
+edition = "2024"
+
+[workspace]
+members = [
+    "lhmc-api-rs-macro"
+]
+
+
+[dependencies.lhmc-api-rs-macro]
+path = "lhmc-api-rs-macro"
+
+
+[lints.rust]
+unused_parens = "allow"
